@@ -16,3 +16,4 @@ The objective is to build a dynamic Fashion Generator model that can generate ne
     a. vanilla_GAN.ipynb - To build a vanilla_GAN generator model that can generate new clothing ideas
     b. dcgan.py - To build a Deep Convolutional GAN generator model that can generate new clothing ideas
     c. cdcgan.py - To build a Conditional DCGAN generator model that can generate new clothing ideas
+![GAN images](https://user-images.githubusercontent.com/99614234/190838555-8076a8b4-f406-411b-84a7-58b124019d9f.PNG)
