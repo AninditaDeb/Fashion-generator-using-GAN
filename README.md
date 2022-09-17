@@ -15,6 +15,12 @@ We upgrade the previously seen GAN models by adding convolutional layers in the 
 first 4 layers use a ReLU activation in tandem with a batch normalization layer. The final layer is aconvolutional layer with a tanh activation function.
 Since our training images are huge, we resized each of them to 64*64 before sending them into the model. This is because it is difficult for any GAN to converge when provided with large images.The architecture from the DCGAN paper (Figure 1) was mainly followed. Since the base code is based on MNIST dataset, the architecture was modified to incorporate inputs specific to the DeepFashion dataset
 
+Model Results
+![GAN images](https://user-images.githubusercontent.com/99614234/190838555-8076a8b4-f406-411b-84a7-58b124019d9f.PNG)
+
+# Conclusion
+The DeepFashion dataset produced promising results to build a powerful fashion generator model.The dataset is packed with high volume of images which are annotated and labelled properly. We saw promising results from the vanilla GANs and DCGANs in our experiments. The addition of the convolution operator in DCGAN substantially improved the model’s ability to learn the sharp edges of the images. The output from the DCGAN fashion generator is close to reality. For the future, the DCGAN needs to be implemented on a higher number of images and for higher number of epochs.Conditional DCGAN provide a very good usecase for fashion generators since they allow a user’s input as a label or an attribute. But the model had poor learning due to computing constraints. Future researchers should focus tuning the hyperparameters of the conditional DCGAN. The model offers a lot of promise since if follows the same architecture as the DCGAN.
+
 # Instructions to run code
 1. Download the DeepFashion Dataset from the official page. Pick the Category and Attribute Prediction Benchmark folder to download
 2. The downloaded file(s) are compressed zip files.
@@ -27,4 +33,4 @@ Since our training images are huge, we resized each of them to 64*64 before send
     a. vanilla_GAN.ipynb - To build a vanilla_GAN generator model that can generate new clothing ideas
     b. dcgan.py - To build a Deep Convolutional GAN generator model that can generate new clothing ideas
     c. cdcgan.py - To build a Conditional DCGAN generator model that can generate new clothing ideas
-![GAN images](https://user-images.githubusercontent.com/99614234/190838555-8076a8b4-f406-411b-84a7-58b124019d9f.PNG)
+
