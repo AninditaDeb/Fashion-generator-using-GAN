@@ -2,7 +2,18 @@
 This is the code repository of our final project as part of CSE-676 Deep Learning Course
 
 # Objective
-The objective is to build a dynamic Fashion Generator model that can generate new fashion and clothing ideas with the help of the user's input
+With the advent of the Big Data era, approach to fashion designing has changed. Fashion style cannow be analyzed by machine learning tools from images and textual descriptions of clothing. It is possible to mine attributes of clothing through deep learning. These attributes are then utilized to generate outfit designs. The improvement of computer vision architectures, particularly that of Convolutional Neural Networks (CNN) have given rise to multiple applications of deep learning
+in the field of fashion. For instance, we have seen fashion-related convolutional neural network implementations such as clothing description [6] and fashion apparel detection. However, there seems to be limited work in fashion design generation.We propose to build an AI-powered fashion design generator by training a Generative Adversarial Network (GAN). At each training iteration, the generator (G) generates a set of images and tries to make them as realistic as possible. Simultaneously, the discriminator (D) tries to determine whethereach of G’s images are real or not. As both G and D train against each other, the generated imagesshould become more and more realistic. We intend to make a fashion design generator that adapts to consumer trends. We will need to be able to input parameters that modify our output. We will be
+able to do this with a Conditional GAN (CGAN) [8]. With CGAN, we can feed in data to condition both the Discriminator and Generator to design creative fashion designs For our AI-powered fashion generator, we will be trying out models of varying complexity starting
+from simple vanilla GANs to Deep Convolutional GANs [11]. We envision a conditional DCGAN.
+
+
+# Architecture
+![Conditional DCGAN](https://user-images.githubusercontent.com/99614234/190838961-f5122cfe-0d11-474b-9756-b985641036d3.PNG)
+
+We upgrade the previously seen GAN models by adding convolutional layers in the architecture.The discriminator has 5 convolutional layers. The first layer takes in a leaky ReLU activation.The next three layers take a leaky ReLU activation function in tandem with a batch normalization layer. The final layer takes in a sigmoid activation function since the discriminator basically needs to differentiate between real and fake images. The generator also has 5 convolutional layers. The
+first 4 layers use a ReLU activation in tandem with a batch normalization layer. The final layer is aconvolutional layer with a tanh activation function.
+Since our training images are huge, we resized each of them to 64*64 before sending them into the model. This is because it is difficult for any GAN to converge when provided with large images.The architecture from the DCGAN paper (Figure 1) was mainly followed. Since the base code is based on MNIST dataset, the architecture was modified to incorporate inputs specific to the DeepFashion dataset
 
 # Instructions to run code
 1. Download the DeepFashion Dataset from the official page. Pick the Category and Attribute Prediction Benchmark folder to download
